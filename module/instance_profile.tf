@@ -33,3 +33,8 @@ resource "aws_iam_role_policy_attachment" "ecs_full_access" {
   role       = "${aws_iam_role.kube_etcd_role.name}"
   policy_arn = "${data.aws_iam_policy.ecs_full_access.arn}"
 }
+
+resource "aws_iam_role_policy_attachment" "s3_full_access_attach" {
+  role = "${aws_iam_role.kube_etcd_role.name}"
+  policy_arn = "${data.aws_iam_policy.s3_full_access.arn}"
+}
