@@ -17,3 +17,7 @@ wget -q --show-progress --https-only --timestamping "https://github.com/coreos/e
 tar -zxvf etcd-v3.4.13-linux-amd64.tar.gz
 sudo mv etcd-v3.4.13-linux-amd64/etcd* /usr/local/bin/
 sudo mkdir -p /etc/etcd /var/lib/etcd
+
+git clone https://github.com/ArunaLakmal/ansible-cfssl.git
+cd ansible-cfssl
+make etcdcerts
